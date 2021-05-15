@@ -1,9 +1,9 @@
 #include "opponent.h"
-
 std::unique_ptr<OpponentProjectile> Opponent::LaunchProjectile() {
   count = count + 1;
   if (count % 5 == 0) {
-    std::unique_ptr<OpponentProjectile> olist_ = std::make_unique<OpponentProjectile>(GetX(), GetY());
+    std::unique_ptr<OpponentProjectile> olist_ =
+        std::make_unique<OpponentProjectile>(GetX(), GetY());
     return std::move(olist_);
   } else {
     return nullptr;
@@ -31,5 +31,3 @@ void OpponentProjectile::Move(const graphics::Image &screen) {
     is_active = false;
   }
 }
-
-

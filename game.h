@@ -18,7 +18,7 @@ class Game : public graphics::AnimationEventListener,
 
   void CreateOpponents() {
     std::unique_ptr<Opponent> b =
-    std::make_unique<Opponent>(gameScreen.GetWidth() * 0.5, 0);
+        std::make_unique<Opponent>(gameScreen.GetWidth() * 0.5, 0);
     opponentlist.push_back(std::move(b));
   }
 
@@ -95,12 +95,12 @@ class Game : public graphics::AnimationEventListener,
     std::string score_message = "score: ";
     score_message += p_score_;
     gameScreen.DrawRectangle(0, 0, gameScreen.GetWidth(),
-                              gameScreen.GetHeight(), 255, 255, 255);
+                             gameScreen.GetHeight(), 255, 255, 255);
     gameScreen.DrawText(0, 0, score_message, 20, 0, 200, 225);
     if (loses == true) {
       gameScreen.DrawText(gameScreen.GetWidth() * 0.5,
-                           gameScreen.GetHeight() * 0.25, "game over", 20, 0,
-                           200, 225);
+                          gameScreen.GetHeight() * 0.25, "game over", 20, 0,
+                          200, 225);
     }
 
     for (int d = 0; d < opponentlist.size(); d++) {
